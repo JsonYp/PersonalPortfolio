@@ -19,102 +19,76 @@ function initSmoothScroll() {
 
 // Sidebar functionality removed
 
-// Advanced dropdown functionality with keyboard navigation
-function initDropdowns() {
-  const dropdowns = document.querySelectorAll('.dropdown');
+// Navigation functionality (dropdowns removed)
+function initNavigation() {
+  // Add active state to current page
+  const currentPage = window.location.pathname.split('/').pop();
+  const navLinks = document.querySelectorAll('.main-nav a');
   
-  dropdowns.forEach((dropdown, index) => {
-    const dropbtn = dropdown.querySelector('.dropbtn');
-    const dropdownContent = dropdown.querySelector('.dropdown-content');
-    const dropdownLinks = dropdownContent.querySelectorAll('a');
-    
-    // Mouse events
-    dropdown.addEventListener('mouseenter', () => {
-      closeAllDropdowns();
-      dropdown.classList.add('active');
-    });
-    
-    dropdown.addEventListener('mouseleave', () => {
-      dropdown.classList.remove('active');
-    });
-    
-    // Click events for mobile
-    dropbtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      const isActive = dropdown.classList.contains('active');
-      
-      closeAllDropdowns();
-      
-      if (!isActive) {
-        dropdown.classList.add('active');
-      }
-    });
-    
-    // Keyboard navigation
-    dropbtn.addEventListener('keydown', function(e) {
-      switch(e.key) {
-        case 'Enter':
-        case ' ':
-          e.preventDefault();
-          dropdown.classList.toggle('active');
-          if (dropdown.classList.contains('active')) {
-            dropdownLinks[0]?.focus();
-          }
-          break;
-        case 'Escape':
-          dropdown.classList.remove('active');
-          dropbtn.focus();
-          break;
-        case 'ArrowDown':
-          e.preventDefault();
-          dropdown.classList.add('active');
-          dropdownLinks[0]?.focus();
-          break;
-      }
-    });
-    
-    // Navigate through dropdown links
-    dropdownLinks.forEach((link, linkIndex) => {
-      link.addEventListener('keydown', function(e) {
-        switch(e.key) {
-          case 'ArrowDown':
-            e.preventDefault();
-            const nextLink = dropdownLinks[linkIndex + 1] || dropdownLinks[0];
-            nextLink.focus();
-            break;
-          case 'ArrowUp':
-            e.preventDefault();
-            const prevLink = dropdownLinks[linkIndex - 1] || dropdownLinks[dropdownLinks.length - 1];
-            prevLink.focus();
-            break;
-          case 'Escape':
-            dropdown.classList.remove('active');
-            dropbtn.focus();
-            break;
-        }
-      });
-    });
-  });
-  
-  // Close dropdowns when clicking outside
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.dropdown')) {
-      closeAllDropdowns();
-    }
-  });
-  
-  // Close dropdowns on escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      closeAllDropdowns();
+  navLinks.forEach(link => {
+    const linkPage = link.getAttribute('href');
+    if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+      link.style.background = 'rgba(16, 185, 129, 0.3)';
+      link.style.color = 'var(--text-accent)';
     }
   });
 }
 
-function closeAllDropdowns() {
-  document.querySelectorAll('.dropdown').forEach(dropdown => {
-    dropdown.classList.remove('active');
+// Dynamic header functionality
+function initDynamicHeader() {
+  const header = document.querySelector('header');
+  if (!header) return;
+  
+  let hideTimeout;
+  
+  // Function to show header
+  function showHeader() {
+    clearTimeout(hideTimeout);
+    header.classList.remove('header-hidden');
+  }
+  
+  // Function to hide header with delay
+  function hideHeader() {
+    hideTimeout = setTimeout(() => {
+      header.classList.add('header-hidden');
+    }, 500); // 500ms delay before hiding
+  }
+  
+  // Mouse enter header area - show header
+  header.addEventListener('mouseenter', showHeader);
+  
+  // Mouse leave header area - hide header with delay
+  header.addEventListener('mouseleave', hideHeader);
+  
+  // Also show header when mouse moves to top of screen
+  document.addEventListener('mousemove', (e) => {
+    // If mouse is in the top 100px of the screen, show header
+    if (e.clientY <= 100) {
+      showHeader();
+    } else if (e.clientY > 150 && !header.matches(':hover')) {
+      // If mouse is below header area and not hovering header, hide it
+      clearTimeout(hideTimeout);
+      hideTimeout = setTimeout(() => {
+        header.classList.add('header-hidden');
+      }, 1000); // Longer delay when moving away from top
+    }
   });
+  
+  // Show header on page load, then hide after 3 seconds
+  setTimeout(() => {
+    if (!header.matches(':hover')) {
+      header.classList.add('header-hidden');
+    }
+  }, 3000);
+  
+  // Show header when pressing Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      showHeader();
+    }
+  });
+  
+  console.log('Dynamic header initialized');
 }
 
 // Add loading animation and page transitions
@@ -202,7 +176,8 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('🚀 Modern Portfolio System Initializing...');
   
   // Core functionality
-  initDropdowns();
+  initNavigation();
+  initDynamicHeader();
   initSmoothScroll();
   initPageTransitions();
   initScrollAnimations();
