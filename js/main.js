@@ -106,18 +106,7 @@ function initPageTransitions() {
     }, 100);
   }
   
-  // Animate hero section
-  const hero = document.querySelector('.hero');
-  if (hero) {
-    hero.style.opacity = '0';
-    hero.style.transform = 'scale(0.95)';
-    
-    setTimeout(() => {
-      hero.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-      hero.style.opacity = '1';
-      hero.style.transform = 'scale(1)';
-    }, 200);
-  }
+  // Hero animation removed - section is now static
 }
 
 // Intersection Observer for scroll animations
@@ -185,15 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Sidebar functionality removed
   
-  // Add subtle parallax effect to hero
-  const hero = document.querySelector('.hero');
-  if (hero) {
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      const parallax = scrolled * 0.5;
-      hero.style.transform = `translateY(${parallax}px)`;
-    });
-  }
+  // Hero parallax effect removed - section is now static
   
   console.log('✅ Portfolio System Initialized Successfully');
 });
