@@ -17,39 +17,7 @@ function initSmoothScroll() {
   });
 }
 
-// Enhanced sidebar toggle with modern animations
-function toggleSidebar() {
-  const sidebar = document.getElementById('sidebar');
-  const button = document.getElementById('sidebarToggle');
-  
-  if (!sidebar || !button) return;
-  
-  sidebar.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-  
-  if (sidebar.style.opacity === '0' || sidebar.style.display === 'none') {
-    sidebar.style.display = 'block';
-    sidebar.style.opacity = '0';
-    sidebar.style.transform = 'translateX(20px)';
-    
-    requestAnimationFrame(() => {
-      sidebar.style.opacity = '1';
-      sidebar.style.transform = 'translateX(0)';
-    });
-    
-    button.textContent = 'Hide Quick Links';
-  } else {
-    sidebar.style.opacity = '0';
-    sidebar.style.transform = 'translateX(20px)';
-    
-    setTimeout(() => {
-      if (sidebar.style.opacity === '0') {
-        sidebar.style.display = 'none';
-      }
-    }, 300);
-    
-    button.textContent = 'Show Quick Links';
-  }
-}
+// Sidebar functionality removed
 
 // Advanced dropdown functionality with keyboard navigation
 function initDropdowns() {
@@ -195,7 +163,7 @@ function initScrollAnimations() {
   }, observerOptions);
   
   // Observe elements for scroll animation
-  document.querySelectorAll('article, .sidebar').forEach(el => {
+  document.querySelectorAll('article').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
@@ -240,11 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initMobileOptimizations();
   
-  // Sidebar functionality
-  const sidebarToggle = document.getElementById('sidebarToggle');
-  if (sidebarToggle) {
-    sidebarToggle.addEventListener('click', toggleSidebar);
-  }
+  // Sidebar functionality removed
   
   // Add subtle parallax effect to hero
   const hero = document.querySelector('.hero');

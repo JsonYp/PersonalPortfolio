@@ -76,14 +76,7 @@ nav a {
   transition: all 0.2s ease;
 }
 
-.sidebar { 
-  background: linear-gradient(135deg, var(--bg-card) 0%, var(--secondary-color) 100%); 
-  padding: 1.5rem; 
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-light);
-  box-shadow: var(--shadow-md);
-  height: fit-content;
-}
+/* Sidebar styles removed */
 
 footer { 
   text-align: center; 
@@ -278,53 +271,14 @@ article p strong {
   font-weight: 600;
 }
 
-/* Sidebar Enhancements */
-.sidebar h3 {
-  color: var(--text-primary);
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
+/* Sidebar styles removed */
 
-.sidebar p {
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-}
+/* Sidebar toggle styles removed */
 
-.sidebar p strong {
-  color: var(--text-accent);
-  font-weight: 600;
-}
-
-#sidebarToggle {
-  background: var(--primary-color);
-  color: var(--bg-secondary);
-  border: none;
-  padding: 0.75rem 1rem;
-  border-radius: var(--radius-md);
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 0.875rem;
-  width: 100%;
-  border: 1px solid var(--primary-dark);
-}
-
-#sidebarToggle:hover {
-  background: var(--primary-dark);
-  color: var(--text-primary);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
-}
-
-/* Grid Layout Improvements */
-.content-grid {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 2rem;
+/* Main Content Layout */
+.content-main {
   margin-top: 2rem;
+  max-width: 100%;
 }
 
 /* Mobile responsive adjustments */
@@ -334,9 +288,8 @@ article p strong {
     padding: 1rem;
   }
   
-  .content-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .content-main {
+    margin-top: 1.5rem;
   }
   
   .hero h1 {
