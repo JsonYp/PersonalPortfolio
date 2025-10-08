@@ -1,0 +1,12 @@
+
+/* Simple CSS for CS0037 Midterm Professional Profile Website */
+body { font-family: Arial, sans-serif; margin:0; padding:0; color:#222; background:#f7f7fb; }
+header { background: linear-gradient(90deg, #4b6cb7, #182848); color: white; padding: 2rem; }
+.container { max-width: 1000px; margin: 1rem auto; padding: 1rem; background:white; box-shadow: 0 2px 6px rgba(0,0,0,0.08); border-radius:8px;}
+nav ul { list-style:none; padding:0; display:flex; gap:1rem; }
+nav a { color: white; text-decoration:none; font-weight:bold; }
+.sidebar { background:#eef2ff; padding:1rem; border-radius:6px; }
+footer { text-align:center; padding:1rem; color:#666; font-size:0.9rem; margin-top:1rem; }
+.hero { padding:2rem 0; color:#fff; }
+.menu-sub { font-size:0.9rem; color:#ddd; }
+.logo { font-weight:bold; font-size:1.2rem; }
