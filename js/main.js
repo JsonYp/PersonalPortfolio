@@ -178,3 +178,53 @@ document.addEventListener('DOMContentLoaded', () => {
   
   console.log('✅ Portfolio System Initialized Successfully');
 });
+
+// Project Tab Switching Function
+function showProject(projectId) {
+  // Hide all project content sections
+  const allProjects = document.querySelectorAll('.project-content');
+  allProjects.forEach(project => {
+    project.style.display = 'none';
+  });
+  
+  // Remove active class from all tabs
+  const allTabs = document.querySelectorAll('.project-tab');
+  allTabs.forEach(tab => {
+    tab.style.background = 'var(--bg-card)';
+    tab.style.color = 'var(--text-secondary)';
+    tab.style.border = '1px solid var(--border-light)';
+    tab.classList.remove('active');
+  });
+  
+  // Show the selected project
+  const selectedProject = document.getElementById(projectId);
+  if (selectedProject) {
+    selectedProject.style.display = 'block';
+    
+    // Add smooth fade-in animation
+    selectedProject.style.opacity = '0';
+    selectedProject.style.transform = 'translateY(10px)';
+    
+    setTimeout(() => {
+      selectedProject.style.transition = 'all 0.4s ease';
+      selectedProject.style.opacity = '1';
+      selectedProject.style.transform = 'translateY(0)';
+    }, 10);
+  }
+  
+  // Highlight the active tab
+  const activeTab = event.target.closest('.project-tab');
+  if (activeTab) {
+    activeTab.style.background = 'var(--primary-color)';
+    activeTab.style.color = 'var(--text-primary)';
+    activeTab.style.border = 'none';
+    activeTab.classList.add('active');
+  }
+  
+  // Scroll to top of project content
+  const contentContainer = document.querySelector('.project-content-container');
+  if (contentContainer) {
+    contentContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+

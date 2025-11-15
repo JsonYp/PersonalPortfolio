@@ -36,7 +36,253 @@
       <article>
         <h2>Portfolio & Projects</h2>
         <p>This page features my most significant projects, showcasing my work in Software Engineering, and other creative endeavors that demonstrate my skills and expertise.</p>
-        <p>Explore examples of my work, from web applications to design projects, and see the quality and creativity I bring to every endeavor.</p>
+        <p>Click on any project tab below to view detailed information and screenshots.</p>
+        
+        <!-- Project Tabs Navigation -->
+        <div class="project-tabs" style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem; border-bottom: 2px solid var(--border-light); padding-bottom: 0.5rem;">
+          <button class="project-tab active" onclick="showProject('powerlift')" style="padding: 0.75rem 1.5rem; background: var(--primary-color); color: var(--text-primary); border: none; border-radius: var(--radius-md); cursor: pointer; font-weight: 600; transition: all 0.3s ease;">
+            🏋️ PowerLift
+          </button>
+          <button class="project-tab" onclick="showProject('cinegang')" style="padding: 0.75rem 1.5rem; background: var(--bg-card); color: var(--text-secondary); border: 1px solid var(--border-light); border-radius: var(--radius-md); cursor: pointer; font-weight: 600; transition: all 0.3s ease;">
+            🎬 CineGang
+          </button>
+          <button class="project-tab" onclick="showProject('ezbcpermit')" style="padding: 0.75rem 1.5rem; background: var(--bg-card); color: var(--text-secondary); border: 1px solid var(--border-light); border-radius: var(--radius-md); cursor: pointer; font-weight: 600; transition: all 0.3s ease;">
+            📋 EzBcPermit
+          </button>
+          <button class="project-tab" onclick="showProject('pinoyhenyo')" style="padding: 0.75rem 1.5rem; background: var(--bg-card); color: var(--text-secondary); border: 1px solid var(--border-light); border-radius: var(--radius-md); cursor: pointer; font-weight: 600; transition: all 0.3s ease;">
+            🎯 Pinoy-Henyo
+          </button>
+          <button class="project-tab" onclick="showProject('reelrental')" style="padding: 0.75rem 1.5rem; background: var(--bg-card); color: var(--text-secondary); border: 1px solid var(--border-light); border-radius: var(--radius-md); cursor: pointer; font-weight: 600; transition: all 0.3s ease;">
+            🎭 ReelRental
+          </button>
+        </div>
+
+        <!-- Project Content Sections -->
+        <div class="project-content-container" style="margin-top: 2rem;">
+          
+          <!-- PowerLift Project -->
+          <div id="powerlift" class="project-content" style="display: block;">
+            <div class="project-header" style="margin-bottom: 1.5rem;">
+              <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">🏋️ PowerLift - Computer Vision Form Evaluation System</h3>
+              <p class="tech-stack" style="color: var(--text-secondary);"><strong>Technology Stack:</strong> Python, YOLOv8, MoveNet, Extended Kalman Filter (EKF)</p>
+            </div>
+            
+            <div class="project-details" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+              <div class="project-description">
+                <h4 style="color: var(--text-accent); margin-bottom: 0.75rem;">Project Description</h4>
+                <p style="margin-bottom: 1rem;">A sophisticated computer vision system for real-time form evaluation during weightlifting exercises. The system tracks barbells and body movement, detects form errors through joint color changes, and outputs comprehensive feedback including annotated videos, radar charts, and detailed form scores.</p>
+                
+                <h4 style="color: var(--text-accent); margin-bottom: 0.75rem;">Key Features</h4>
+                <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+                  <li>Real-time motion tracking using advanced computer vision algorithms</li>
+                  <li>AI-powered form analysis with immediate feedback</li>
+                  <li>Visual feedback system with color-coded joint indicators</li>
+                  <li>Comprehensive output including annotated videos and radar charts</li>
+                  <li>Detailed form scoring and error detection</li>
+                </ul>
+                
+                <h4 style="color: var(--text-accent); margin-bottom: 0.75rem;">Technical Highlights</h4>
+                <ul style="padding-left: 1.5rem;">
+                  <li>Integration of YOLOv8 for object detection</li>
+                  <li>MoveNet for pose estimation</li>
+                  <li>Extended Kalman Filter for smooth tracking</li>
+                  <li>Real-time video processing pipeline</li>
+                </ul>
+              </div>
+              
+              <div class="project-screenshot" style="display: flex; flex-direction: column; align-items: center;">
+                <img src="images/powerlift-screenshot.png" alt="PowerLift Project Screenshot" class="project-img" style="width: 100%; max-width: 500px; border-radius: var(--radius-lg); border: 2px solid var(--border-light); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);">
+                <p class="screenshot-caption" style="margin-top: 0.5rem; font-style: italic; color: var(--text-light); text-align: center;">PowerLift in action - Real-time form analysis</p>
+              </div>
+            </div>
+            
+            <div class="project-links" style="text-align: center; margin-top: 1.5rem;">
+              <a href="https://github.com/JsonYp/PowerLift" target="_blank" class="github-link" style="display: inline-block; padding: 0.75rem 2rem; background: var(--primary-color); color: var(--text-primary); text-decoration: none; border-radius: var(--radius-md); font-weight: 600; transition: all 0.3s ease;">
+                <span>🔗 View on GitHub</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- CineGang Project -->
+          <div id="cinegang" class="project-content" style="display: none;">
+            <div class="project-header" style="margin-bottom: 1.5rem;">
+              <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">🎬 CineGang - Online Movie Community Platform</h3>
+              <p class="tech-stack" style="color: var(--text-secondary);"><strong>Technology Stack:</strong> PHP, MySQL, HTML, CSS, JavaScript</p>
+            </div>
+            
+            <div class="project-details" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+              <div class="project-description">
+                <h4 style="color: var(--text-accent); margin-bottom: 0.75rem;">Project Description</h4>
+                <p style="margin-bottom: 1rem;">A comprehensive web application that creates an online community for movie enthusiasts. Users can create personalized accounts, manage detailed profiles, share and discuss their favorite films, and participate in community discussions about cinema.</p>
+                
+                <h4 style="color: var(--text-accent); margin-bottom: 0.75rem;">Key Features</h4>
+                <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+                  <li>User authentication and authorization system</li>
+                  <li>Profile management with customization options</li>
+                  <li>Film sharing and rating functionality</li>
+                  <li>Community discussion forums</li>
+                  <li>Search and filter capabilities for movies</li>
+                </ul>
+                
+                <h4 style="color: var(--text-accent); margin-bottom: 0.75rem;">Technical Highlights</h4>
+                <ul style="padding-left: 1.5rem;">
+                  <li>Full-stack web development with PHP backend</li>
+                  <li>MySQL database design and optimization</li>
+                  <li>Responsive front-end design</li>
+                  <li>Secure user authentication implementation</li>
+                </ul>
+              </div>
+              
+              <div class="project-screenshot" style="display: flex; flex-direction: column; align-items: center;">
+                <img src="images/cinegang-screenshot.png" alt="CineGang Project Screenshot" class="project-img" style="width: 100%; max-width: 500px; border-radius: var(--radius-lg); border: 2px solid var(--border-light); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);">
+                <p class="screenshot-caption" style="margin-top: 0.5rem; font-style: italic; color: var(--text-light); text-align: center;">CineGang - Movie community interface</p>
+              </div>
+            </div>
+            
+            <div class="project-links" style="text-align: center; margin-top: 1.5rem;">
+              <a href="https://github.com/JsonYp/Cinegang" target="_blank" class="github-link" style="display: inline-block; padding: 0.75rem 2rem; background: var(--primary-color); color: var(--text-primary); text-decoration: none; border-radius: var(--radius-md); font-weight: 600; transition: all 0.3s ease;">
+                <span>🔗 View on GitHub</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- EzBcPermit Project -->
+          <div id="ezbcpermit" class="project-content" style="display: none;">
+            <div class="project-header" style="margin-bottom: 1.5rem;">
+              <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">📋 EzBcPermit - Business Permit Registration System</h3>
+              <p class="tech-stack" style="color: var(--text-secondary);"><strong>Technology Stack:</strong> C++</p>
+            </div>
+            
+            <div class="project-details" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+              <div class="project-description">
+                <h4 style="color: var(--text-accent); margin-bottom: 0.75rem;">Project Description</h4>
+                <p style="margin-bottom: 1rem;">A console-based business permit registration system that streamlines the permit application and renewal process. The system provides a user-friendly interface that simulates a web-based experience while operating in a console environment.</p>
+                
+                <h4 style="color: var(--text-accent); margin-bottom: 0.75rem;">Key Features</h4>
+                <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+                  <li>Permit application processing workflow</li>
+                  <li>Renewal system with automated checks</li>
+                  <li>User-friendly console interface design</li>
+                  <li>Data validation and error handling</li>
+                  <li>Record management system</li>
+                </ul>
+                
+                <h4 style="color: var(--text-accent); margin-bottom: 0.75rem;">Technical Highlights</h4>
+                <ul style="padding-left: 1.5rem;">
+                  <li>Object-oriented programming in C++</li>
+                  <li>File I/O for data persistence</li>
+                  <li>Menu-driven interface design</li>
+                  <li>Input validation and sanitization</li>
+                </ul>
+              </div>
+              
+              <div class="project-screenshot" style="display: flex; flex-direction: column; align-items: center;">
+                <img src="images/ezbcpermit-screenshot.png" alt="EzBcPermit Project Screenshot" class="project-img" style="width: 100%; max-width: 500px; border-radius: var(--radius-lg); border: 2px solid var(--border-light); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);">
+                <p class="screenshot-caption" style="margin-top: 0.5rem; font-style: italic; color: var(--text-light); text-align: center;">EzBcPermit - Console interface</p>
+              </div>
+            </div>
+            
+            <div class="project-links" style="text-align: center; margin-top: 1.5rem;">
+              <a href="https://github.com/JsonYp/EzBcPermit" target="_blank" class="github-link" style="display: inline-block; padding: 0.75rem 2rem; background: var(--primary-color); color: var(--text-primary); text-decoration: none; border-radius: var(--radius-md); font-weight: 600; transition: all 0.3s ease;">
+                <span>🔗 View on GitHub</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Pinoy-Henyo Project -->
+          <div id="pinoyhenyo" class="project-content" style="display: none;">
+            <div class="project-header" style="margin-bottom: 1.5rem;">
+              <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">🎯 Pinoy-Henyo - Interactive Guessing Game System</h3>
+              <p class="tech-stack" style="color: var(--text-secondary);"><strong>Technology Stack:</strong> Java</p>
+            </div>
+            
+            <div class="project-details" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+              <div class="project-description">
+                <h4 style="color: var(--text-accent); margin-bottom: 0.75rem;">Project Description</h4>
+                <p style="margin-bottom: 1rem;">A console-based recreation of the popular Filipino guessing game "Pinoy Henyo." The system allows users to input words and categories, creating an interactive multiplayer experience where different users can guess the words and categories in a fun, engaging format.</p>
+                
+                <h4 style="color: var(--text-accent); margin-bottom: 0.75rem;">Key Features</h4>
+                <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+                  <li>Multiplayer functionality for interactive gameplay</li>
+                  <li>Category-based word organization</li>
+                  <li>Interactive console interface with clear prompts</li>
+                  <li>Custom word and category input system</li>
+                  <li>Score tracking and game statistics</li>
+                </ul>
+                
+                <h4 style="color: var(--text-accent); margin-bottom: 0.75rem;">Technical Highlights</h4>
+                <ul style="padding-left: 1.5rem;">
+                  <li>Java programming with OOP principles</li>
+                  <li>Game logic implementation</li>
+                  <li>User input handling and validation</li>
+                  <li>Cultural adaptation of traditional Filipino game</li>
+                </ul>
+              </div>
+              
+              <div class="project-screenshot" style="display: flex; flex-direction: column; align-items: center;">
+                <img src="images/pinoyhenyo-screenshot.png" alt="Pinoy-Henyo Project Screenshot" class="project-img" style="width: 100%; max-width: 500px; border-radius: var(--radius-lg); border: 2px solid var(--border-light); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);">
+                <p class="screenshot-caption" style="margin-top: 0.5rem; font-style: italic; color: var(--text-light); text-align: center;">Pinoy-Henyo - Game interface</p>
+              </div>
+            </div>
+            
+            <div class="project-links" style="text-align: center; margin-top: 1.5rem;">
+              <a href="https://github.com/JsonYp/Pinoy-Henyo" target="_blank" class="github-link" style="display: inline-block; padding: 0.75rem 2rem; background: var(--primary-color); color: var(--text-primary); text-decoration: none; border-radius: var(--radius-md); font-weight: 600; transition: all 0.3s ease;">
+                <span>🔗 View on GitHub</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- ReelRental Project -->
+          <div id="reelrental" class="project-content" style="display: none;">
+            <div class="project-header" style="margin-bottom: 1.5rem;">
+              <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">🎭 ReelRental - Movie Rental Management System</h3>
+              <p class="tech-stack" style="color: var(--text-secondary);"><strong>Technology Stack:</strong> C++</p>
+            </div>
+            
+            <div class="project-details" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+              <div class="project-description">
+                <h4 style="color: var(--text-accent); margin-bottom: 0.75rem;">Project Description</h4>
+                <p style="margin-bottom: 1rem;">A comprehensive console-based movie rental system that facilitates movie rental operations and inventory management. The system allows users to rent movies, add new titles to the inventory, and manage the entire rental process through an intuitive console interface.</p>
+                
+                <h4 style="color: var(--text-accent); margin-bottom: 0.75rem;">Key Features</h4>
+                <ul style="margin-bottom: 1rem; padding-left: 1.5rem;">
+                  <li>Movie rental processing with transaction tracking</li>
+                  <li>Inventory management and stock control</li>
+                  <li>User-friendly console navigation system</li>
+                  <li>Search functionality for movies</li>
+                  <li>Rental history and due date management</li>
+                </ul>
+                
+                <h4 style="color: var(--text-accent); margin-bottom: 0.75rem;">Technical Highlights</h4>
+                <ul style="padding-left: 1.5rem;">
+                  <li>C++ with object-oriented design patterns</li>
+                  <li>Data structure implementation for inventory</li>
+                  <li>File handling for persistent storage</li>
+                  <li>Menu-driven architecture</li>
+                </ul>
+              </div>
+              
+              <div class="project-screenshot" style="display: flex; flex-direction: column; align-items: center;">
+                <img src="images/reelrental-screenshot.png" alt="ReelRental Project Screenshot" class="project-img" style="width: 100%; max-width: 500px; border-radius: var(--radius-lg); border: 2px solid var(--border-light); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);">
+                <p class="screenshot-caption" style="margin-top: 0.5rem; font-style: italic; color: var(--text-light); text-align: center;">ReelRental - Rental management interface</p>
+              </div>
+            </div>
+            
+            <div class="project-links" style="text-align: center; margin-top: 1.5rem;">
+              <a href="https://github.com/JsonYp/ReelRental" target="_blank" class="github-link" style="display: inline-block; padding: 0.75rem 2rem; background: var(--primary-color); color: var(--text-primary); text-decoration: none; border-radius: var(--radius-md); font-weight: 600; transition: all 0.3s ease;">
+                <span>🔗 View on GitHub</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- More Projects Section -->
+        <div style="margin-top: 3rem; padding: 1.5rem; background: rgba(31, 41, 55, 0.5); border-radius: 8px; text-align: center;">
+          <p><strong>🚀 More Projects Coming Soon!</strong></p>
+          <p>I'm continuously working on new projects and expanding my portfolio. Check back regularly or visit my <a href="https://github.com/JsonYp" target="_blank" style="color: var(--primary-color);">GitHub profile</a> for the latest updates.</p>
+        </div>
+      </article>
         
         <div style="margin-top: 2rem;">
           <h3>Featured Projects</h3>
