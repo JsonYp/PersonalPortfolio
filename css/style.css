@@ -681,6 +681,7 @@ article p strong {
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border-light);
   min-height: 400px;
+  position: relative;
 }
 
 .skill-item {
