@@ -921,9 +921,12 @@ article p strong {
 }
 
 .tool-icon {
-  width: 120px;
-  height: 120px;
+  width: 120px !important;
+  height: 120px !important;
+  max-width: 120px !important;
+  max-height: 120px !important;
   object-fit: contain;
+  display: block;
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
   animation: floatTool 3s ease-in-out infinite;
   transition: all 0.3s ease;
