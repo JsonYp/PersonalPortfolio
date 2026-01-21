@@ -40,27 +40,85 @@
         <p>View the credentials I've earned and the specialized training that enhances my professional capabilities.</p>
         
         <div style="margin-top: 2rem;">
-          <h3>Certifications</h3>
+          <h3>Professional Certifications</h3>
           
-          <div style="margin: 1.5rem 0;">
-            <h4><strong>CISCO NETWORKING ACADEMY - NETWORKING ESSENTIALS</strong></h4>
+          <div class="certifications-grid">
+            <!-- Certificate 1 -->
+            <div class="cert-card" onclick="openCertModal('images/CISCO NETWORKING ESSENTIALS_page-0001.jpg')">
+              <div class="cert-preview">
+                <img src="images/CISCO NETWORKING ESSENTIALS_page-0001.jpg" alt="CISCO Networking Essentials">
+                <div class="cert-overlay">
+                  <span class="view-cert-btn">View Certificate</span>
+                </div>
+              </div>
+              <div class="cert-info">
+                <h4>CISCO Networking Essentials</h4>
+                <p class="cert-issuer">Cisco Networking Academy</p>
+              </div>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="cert-card" onclick="openCertModal('images/CISCO INTRODUCTION TO CYBERSECURITY_page-0001.jpg')">
+              <div class="cert-preview">
+                <img src="images/CISCO INTRODUCTION TO CYBERSECURITY_page-0001.jpg" alt="CISCO Introduction to Cybersecurity">
+                <div class="cert-overlay">
+                  <span class="view-cert-btn">View Certificate</span>
+                </div>
+              </div>
+              <div class="cert-info">
+                <h4>Introduction to Cybersecurity</h4>
+                <p class="cert-issuer">Cisco Networking Academy</p>
+              </div>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="cert-card" onclick="openCertModal('images/CISCO INTRODUCTION TO NETWORKS_page-0001.jpg')">
+              <div class="cert-preview">
+                <img src="images/CISCO INTRODUCTION TO NETWORKS_page-0001.jpg" alt="CISCO Introduction to Networks">
+                <div class="cert-overlay">
+                  <span class="view-cert-btn">View Certificate</span>
+                </div>
+              </div>
+              <div class="cert-info">
+                <h4>Introduction to Networks</h4>
+                <p class="cert-issuer">Cisco Networking Academy</p>
+              </div>
+            </div>
+
+            <!-- Certificate 4 -->
+            <div class="cert-card" onclick="openCertModal('images/IT SPECIALIST PYTHON_page-0001.jpg')">
+              <div class="cert-preview">
+                <img src="images/IT SPECIALIST PYTHON_page-0001.jpg" alt="IT Specialist Python">
+                <div class="cert-overlay">
+                  <span class="view-cert-btn">View Certificate</span>
+                </div>
+              </div>
+              <div class="cert-info">
+                <h4>IT Specialist - Python</h4>
+                <p class="cert-issuer">Certiport</p>
+              </div>
+            </div>
+
+            <!-- Certificate 5 -->
+            <div class="cert-card" onclick="openCertModal('images/PMI PROJECT MANAGEMENT READY_page-0001.jpg')">
+              <div class="cert-preview">
+                <img src="images/PMI PROJECT MANAGEMENT READY_page-0001.jpg" alt="PMI Project Management Ready">
+                <div class="cert-overlay">
+                  <span class="view-cert-btn">View Certificate</span>
+                </div>
+              </div>
+              <div class="cert-info">
+                <h4>Project Management Ready</h4>
+                <p class="cert-issuer">Project Management Institute (PMI)</p>
+              </div>
+            </div>
           </div>
-          
-          <div style="margin: 1.5rem 0;">
-            <h4><strong>CISCO NETWORKING ACADEMY - INTRODUCTION TO CYBERSECURITY</strong></h4>
-          </div>
-          
-          <div style="margin: 1.5rem 0;">
-            <h4><strong>CISCO NETWORKING ACADEMY - INTRODUCTION TO NETWORKS</strong></h4>
-          </div>
-          
-          <div style="margin: 1.5rem 0;">
-            <h4><strong>IT SPECIALIST - PYTHON</strong></h4>
-          </div>
-          
-          <div style="margin: 1.5rem 0;">
-            <h4><strong>PMI PROJECT MANAGEMENT READY</strong></h4>
-          </div>
+        </div>
+
+        <!-- Certificate Modal -->
+        <div id="certModal" class="cert-modal" onclick="closeCertModal()">
+          <span class="cert-modal-close">&times;</span>
+          <img class="cert-modal-content" id="certModalImg">
         </div>
       </article>
     </div>
@@ -71,5 +129,27 @@
   </main>
 
   <script src="js/main.js"></script>
+  <script>
+    function openCertModal(imageSrc) {
+      const modal = document.getElementById('certModal');
+      const modalImg = document.getElementById('certModalImg');
+      modal.style.display = 'flex';
+      modalImg.src = imageSrc;
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCertModal() {
+      const modal = document.getElementById('certModal');
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal on ESC key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeCertModal();
+      }
+    });
+  </script>
 </body>
 </html>
